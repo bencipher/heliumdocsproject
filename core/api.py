@@ -12,6 +12,11 @@ applications.get_swagger_ui_html = swagger_monkey_patch
 
 
 # === Application Main Endpoint
+@app.get("/")
+def hello():
+    return {"message": "Welcome to HeliumDocs"}
+
+
 @app.get("/news")
 async def news_aggregator(query: str = None, limit: int = 10):
     """
@@ -35,4 +40,4 @@ async def news_aggregator(query: str = None, limit: int = 10):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run("api:app", host="127.0.0.1", port=8000, reload=True)
