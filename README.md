@@ -1,5 +1,4 @@
 # news-extractor-pr
-Helium Docs Technical Assignment
 This implements an application that aggregates news from two different APIs. The APIs used are Reddit and News API.
 
 Functions
